@@ -111,7 +111,7 @@ See `data_dictionary_relations.csv` for all 55 columns. UMLS semantic type codes
 
 ## Citation
 
-If you use this code or data, please cite the paper above and the archived version of this repository: [Zenodo DOI to be added].
+If you use this code or data, please cite the paper above and the archived version of this repository: 10.5281/zenodo.23620569.
 
 ## Contact
 
