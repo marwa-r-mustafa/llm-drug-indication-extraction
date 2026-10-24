@@ -1,13 +1,13 @@
-# From Free Text to Validated Drug–Disease Relations
+# From Free Text to Validated Drug-Disease Relations
 
 Code and data for the paper:
 
-> Mustafa M., Al-Doghman F., Hussain F., Ali M. *From Free Text to Validated Drug–Disease Relations: Benchmarking Open-Weight LLMs with UMLS Normalization and Multi-Source Evidence.* (Submitted to *Applied Artificial Intelligence*.)
+> Mustafa M., Al-Doghman F., Hussain F., Ali M. *From Free Text to Validated Drug-Disease Relations: Benchmarking Open-Weight LLMs with UMLS Normalization and Multi-Source Evidence.* (Submitted to *Applied Artificial Intelligence*.)
 
 The study has two levels:
 
-- **Level 1 – model benchmarking.** Five locally deployed open-weight LLMs extract drug indications from 500 expert-annotated LabeledIn records with one frozen zero-shot prompt. Outputs are scored against the LabeledIn gold standard at UMLS concept level, with bootstrap confidence intervals and paired bootstrap tests.
-- **Level 2 – validation framework.** The selected model (Gemma3) is applied to 500 DrugBank records, producing 2,110 candidate drug–disease relations. Each relation is normalized to UMLS, disambiguated with same-drug DrugCentral evidence, corroborated against DrugCentral, DailyMed, openFDA and LabeledIn, and screened by a non-therapeutic safety gate. 1,074 relations (50.9%) were automatically confirmed and 1,036 (49.1%) were routed to review.
+- **Level 1 - model benchmarking.** Five locally deployed open-weight LLMs extract drug indications from 500 expert-annotated LabeledIn records with one frozen zero-shot prompt. Outputs are scored against the LabeledIn gold standard at UMLS concept level, with bootstrap confidence intervals and paired bootstrap tests.
+- **Level 2 - validation framework.** The selected model (Gemma3) is applied to 500 DrugBank records, producing 2,110 candidate drug-disease relations. Each relation is normalized to UMLS, disambiguated with same-drug DrugCentral evidence, corroborated against DrugCentral, DailyMed, openFDA and LabeledIn, and screened by a non-therapeutic safety gate. 1,074 relations (50.9%) were automatically confirmed and 1,036 (49.1%) were routed to review.
 
 ---
 
@@ -20,19 +20,19 @@ The study has two levels:
 | `openbioLLM.ipynb`, `pubmedlama.ipynb`, `gemma3.ipynb`, `medgemma.ipynb`, `Qwen3-8B.ipynb` | Run each model on the 500 LabeledIn records through Ollama |
 | `llm_models_evaluation.ipynb` | Concept-level scoring against the LabeledIn gold standard |
 | `finalstatistics.ipynb` | Micro-averaged precision, recall and F1; bootstrap 95% CIs; paired bootstrap comparisons |
-| `LabeledIn_5_Model_Bootstrap_Statistics.xlsx` | Output of `finalstatistics.ipynb` (Tables 4–5 of the paper) |
+| `LabeledIn_5_Model_Bootstrap_Statistics.xlsx` | Output of `finalstatistics.ipynb` (Tables 4-5 of the paper) |
 | LabeledIn results files | Per-record model outputs for the five models |
 
 ### `level2_extraction_results/`
 
 | File | Description |
 |---|---|
-| `drug_disease_relations_validated_SHAREABLE.csv` | All 2,110 extracted relations with every validation step and the final decision (DrugBank text and UMLS names removed – see *Licensing*) |
+| `drug_disease_relations_validated_SHAREABLE.csv` | All 2,110 extracted relations with every validation step and the final decision (DrugBank text and UMLS names removed - see *Licensing*) |
 | `data_dictionary_relations.csv` | Plain-English description of all 55 columns |
 | `validation_statistics_FINAL.csv` | Overall counts (relations, confirmed, review, drug-level coverage) |
 | `validation_source_statistics_FINAL.csv` | Evidence counts per source (Table 6) |
 | `validation_status_summary_FINAL.csv` | Counts per final validation status (Table 7) |
-| `ablation_study.py` | Cumulative component ablation (Figure 3) – runs on the shareable CSV |
+| `ablation_study.py` | Cumulative component ablation (Figure 3) - runs on the shareable CSV |
 | `ablation_study_results.csv` | Output of `ablation_study.py` |
 | `sample20.py` | Draws the random sample of 20 automatically confirmed relations (seed 42) |
 | `LLM_Manual_Validation_Audit_30_plus_20_shareable.xlsx` | Manual audit of 30 review-routed relations (purposive) and 20 automatically confirmed relations (random) |
@@ -98,9 +98,9 @@ See `data_dictionary_relations.csv` for all 55 columns. UMLS semantic type codes
 |---|---|---|---|
 | DrugBank | 5.1.15 (academic licence) | Input indication text | **No.** Only DrugBank IDs and drug names (DrugBank Open Vocabulary, CC0) are included. Researchers with a DrugBank licence can retrieve the text by `drugbank_id`. |
 | UMLS Metathesaurus | 2026AA | Concept normalization | **No concept names.** Only CUIs and semantic type codes are included. UMLS requires a licence from the U.S. National Library of Medicine. |
-| DrugCentral | – | Structured indication evidence | **No indication names.** Only match results (TRUE/FALSE), UMLS CUIs and a similarity score are included. DrugCentral is available at https://drugcentral.org (CC BY-SA 4.0). |
+| DrugCentral | - | Structured indication evidence | **No indication names.** Only match results (TRUE/FALSE), UMLS CUIs and a similarity score are included. DrugCentral is available at https://drugcentral.org (CC BY-SA 4.0). |
 | DailyMed / openFDA | Accessed 2026 | Regulatory label evidence | Matched label passages (U.S. government work, public domain) |
-| LabeledIn | – | Gold standard (Level 1) and evidence (Level 2) | Model outputs on LabeledIn records |
+| LabeledIn | - | Gold standard (Level 1) and evidence (Level 2) | Model outputs on LabeledIn records |
 
 **Licences for this repository**
 
