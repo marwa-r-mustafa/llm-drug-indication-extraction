@@ -1,0 +1,6 @@
+﻿configuration,auto_confirmed_n,auto_confirmed_pct,not_auto_confirmed_n,not_auto_confirmed_pct,non_therapeutic_blocked_n,net_change_vs_previous_n,net_change_vs_previous_pp
+A. Exact string only,210,9.95,1900,90.05,0,210,9.95
+B. + UMLS unique CUI,338,16.02,1772,83.98,0,128,6.07
+C. + DrugCentral CUI disambiguation,389,18.44,1721,81.56,0,51,2.42
+D. + DailyMed/openFDA + same-SETID LabeledIn,1103,52.27,1007,47.73,0,714,33.84
+E. + non-therapeutic safety gate,1074,50.9,1036,49.1,29,-29,-1.37

@@ -1,0 +1,16 @@
+Data licence
+
+The data files in this repository (the CSV and XLSX files in level1_labeledin/ and
+level2_extraction_results/) are licensed under the Creative Commons Attribution 4.0
+International License (CC BY 4.0).
+
+https://creativecommons.org/licenses/by/4.0/
+
+These files include passages from U.S. FDA drug labels obtained through DailyMed and
+openFDA (public domain).
+
+They do not include DrugBank indication text, UMLS concept names, or DrugCentral
+indication names. These resources are subject to their own licences and must be obtained
+from DrugBank, the U.S. National Library of Medicine, and DrugCentral respectively.
+
+The code in this repository is licensed separately under the MIT License (see LICENSE).
