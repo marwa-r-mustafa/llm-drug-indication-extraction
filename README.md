@@ -27,7 +27,7 @@ The study has two levels:
 
 | File | Description |
 |---|---|
-| `drug_disease_relations_validated_SHAREABLE.csv` | All 2,110 extracted relations with every validation step and the final decision (DrugBank text and UMLS names removed - see *Licensing*) |
+| `drug_disease_relations_validated_SHAREABLE.csv` | All 2,110 extracted relations with every validation step and the final decision (DrugBank text and UMLS names removed; CC BY-NC 4.0 - see *Licensing*) |
 | `data_dictionary_relations.csv` | Plain-English description of all 55 columns |
 | `validation_statistics_FINAL.csv` | Overall counts (relations, confirmed, review, drug-level coverage) |
 | `validation_source_statistics_FINAL.csv` | Evidence counts per source (Table 6) |
@@ -91,23 +91,47 @@ Draws the same 20 relations used in the manual check (pandas `DataFrame.sample`,
 See `data_dictionary_relations.csv` for all 55 columns. UMLS semantic type codes used in `gemma_umls_semantic_tuis`: T047 Disease or Syndrome, T191 Neoplastic Process, T048 Mental or Behavioral Dysfunction, T046 Pathologic Function, T033 Finding, T184 Sign or Symptom, T037 Injury or Poisoning, T020 Acquired Abnormality, T019 Congenital Abnormality, T190 Anatomical Abnormality, T049 Cell or Molecular Dysfunction.
 
 ---
-
 ## Data sources and licensing
 
 | Source | Version | Use | Redistributed here? |
 |---|---|---|---|
-| DrugBank | 5.1.15 (academic licence) | Input indication text | **No.** Only DrugBank IDs and drug names (DrugBank Open Vocabulary, CC0) are included. Researchers with a DrugBank licence can retrieve the text by `drugbank_id`. |
+| DrugBank | 5.1.15 (academic licence) | Input indication text (Level 2) | **No DrugBank text.** Only DrugBank IDs and drug names (DrugBank Open Vocabulary, CC0) are included. The Level 2 relations are *derived* from DrugBank text and are therefore licensed CC BY-NC 4.0 (see below). Researchers with a DrugBank licence can retrieve the source text by `drugbank_id`. |
 | UMLS Metathesaurus | 2026AA | Concept normalization | **No concept names.** Only CUIs and semantic type codes are included. UMLS requires a licence from the U.S. National Library of Medicine. |
 | DrugCentral | - | Structured indication evidence | **No indication names.** Only match results (TRUE/FALSE), UMLS CUIs and a similarity score are included. DrugCentral is available at https://drugcentral.org (CC BY-SA 4.0). |
-| DailyMed / openFDA | Accessed 2026 | Regulatory label evidence | Matched label passages (U.S. government work, public domain) |
-| LabeledIn | - | Gold standard (Level 1) and evidence (Level 2) | Model outputs on LabeledIn records |
+| DailyMed / openFDA | Accessed 2026 | Regulatory label evidence | Matched label passages (U.S. government work, public domain; openFDA CC0). |
+| LabeledIn | 2014 release | Gold standard (Level 1) and evidence (Level 2) | Record IDs, indication text and expert annotations as used for benchmarking; model outputs. LabeledIn is a U.S. Government work in the public domain. |
 
-**Licences for this repository**
+### Licences for this repository
 
-- Code: MIT License (`LICENSE`)
-- Data files: CC BY 4.0 (`LICENSE-DATA`)
+| Content | Licence |
+|---|---|
+| Code (`.py`, `.ipynb`) | MIT License (`LICENSE`) |
+| `level1_labeledin/` data files | CC BY 4.0 (`LICENSE-DATA`) |
+| `level2_extraction_results/` data files | **CC BY-NC 4.0** (`LICENSE-DATA`) |
 
----
+### DrugBank attribution (Level 2 data)
+
+The files in `level2_extraction_results/` are adapted from DrugBank
+(© OMx Personalized Health), licensed under
+[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+**Modifications:** drug-disease relations were extracted from DrugBank 5.1.15
+indication text using Gemma3-4B, normalized to UMLS CUIs, and validated against
+DrugCentral, DailyMed, openFDA and LabeledIn. DrugBank source text is not included.
+Commercial use of these files requires a licence from DrugBank
+(https://go.drugbank.com).
+
+### Disclaimer
+
+All data are provided "as is", without warranty, for research use only.
+They must not be used for clinical decision-making.
+
+### Please also cite the data sources
+
+- Knox C. et al. DrugBank 6.0: the DrugBank Knowledgebase for 2024. *Nucleic Acids Res.* 2024;52(D1):D1265–D1275.
+- Khare R., Li J., Lu Z. LabeledIn: cataloging labeled indications for human drugs. *J Biomed Inform.* 2014;52:448–456.
+- Bodenreider O. The Unified Medical Language System (UMLS). *Nucleic Acids Res.* 2004;32:D267–D270.
+- DrugCentral: Avram S. et al. *Nucleic Acids Res.* (cite the release you used).
+- Kass-Hout T.A. et al. OpenFDA. *J Am Med Inform Assoc.* 2016;23(3):596–600.
 
 ## Citation
 
