@@ -1,16 +1,42 @@
 Data licence
 
-The data files in this repository (the CSV and XLSX files in level1_labeledin/ and
-level2_extraction_results/) are licensed under the Creative Commons Attribution 4.0
-International License (CC BY 4.0).
+This repository contains data under two licences.
 
+1. Level 1 benchmark data: CC BY 4.0
+The data files in level1_labeledin/ are licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0).
 https://creativecommons.org/licenses/by/4.0/
 
-These files include passages from U.S. FDA drug labels obtained through DailyMed and
-openFDA (public domain).
+These files are based on the LabeledIn corpus (Khare, Li and Lu, 2014), a U.S.
+Government work in the public domain, and on passages from U.S. FDA drug labels
+obtained through DailyMed and openFDA (public domain).
 
-They do not include DrugBank indication text, UMLS concept names, or DrugCentral
-indication names. These resources are subject to their own licences and must be obtained
-from DrugBank, the U.S. National Library of Medicine, and DrugCentral respectively.
+2. Level 2 extraction results: CC BY-NC 4.0
+The data files in level2_extraction_results/ are derived from DrugBank version
+5.1.15 indication text, used under a DrugBank academic licence. In accordance with
+the DrugBank licence terms, these files are licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+https://creativecommons.org/licenses/by-nc/4.0/
 
+Source: DrugBank (https://go.drugbank.com), (c) OMx Personalized Health,
+licensed under CC BY-NC 4.0. Modifications: drug-disease indication relations were
+extracted from DrugBank indication text using Gemma3-4B, normalized to UMLS concept
+identifiers, and validated against DrugCentral, DailyMed, openFDA and LabeledIn.
+Commercial use of these files requires a licence from DrugBank.
+
+These files also include passages from U.S. FDA drug labels obtained through
+DailyMed and openFDA (public domain).
+
+3. Excluded third-party content
+No file in this repository includes DrugBank indication text, UMLS concept names, or
+DrugCentral indication names. These resources are subject to their own licences and
+must be obtained from DrugBank, the U.S. National Library of Medicine, and
+DrugCentral respectively. UMLS content is limited to concept identifiers (CUIs) and
+semantic type identifiers (TUIs).
+
+4. Disclaimer
+The data are provided "as is", without warranty of any kind, and are intended for
+research use only. They must not be used for clinical decision-making.
+
+5. Code
 The code in this repository is licensed separately under the MIT License (see LICENSE).
