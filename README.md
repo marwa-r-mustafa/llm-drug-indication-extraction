@@ -2,7 +2,7 @@
 
 Code and data for the paper:
 
-> Mustafa M., Al-Doghman F., Hussain F., Ali M. *From Free Text to Validated Drug-Disease Relations: Benchmarking Open-Weight LLMs with UMLS Normalization and Multi-Source Evidence.* (Submitted to *Applied Artificial Intelligence*.)
+> Mustafa M., Al-Doghman F., Ali M. *From Free Text to Validated Drug-Disease Relations: Benchmarking Open-Weight LLMs with UMLS Normalization and Multi-Source Evidence.* (Submitted to *Applied Artificial Intelligence*.)
 
 The study has two levels:
 
